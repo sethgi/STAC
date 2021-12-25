@@ -14,7 +14,7 @@ class Environmental(MapElement):
 
     # (A, phi, theta)
     # coefficient = A * cos(phi * t + theta) 
-    self._sinusuoids = [(np.random.rand() * 2 + 1, 
+    self._sinusuoids = [(np.random.rand() * 5 + 10,
                         np.random.rand() / 5, 
                         np.random.rand() * 2*np.pi) for _ in range(NUM_GAUSSIANS)]
 
@@ -25,7 +25,7 @@ class Environmental(MapElement):
       (x_min, x_max), (y_min, y_max) = self._map.GetBounds()
       
       x_mean = np.random.rand() * (x_max - x_min) + x_min 
-      y_mean = np.random.rand() * (y_max - y_min) + y_min 
+      y_mean = np.random.rand() * (y_max - y_min) + y_min
 
       x_variance = 6 * np.random.rand() + 3
       y_variance = 6 * np.random.rand() + 3
